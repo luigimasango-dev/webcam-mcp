@@ -1,0 +1,15 @@
+[project]
+name = "webcam-mcp"
+version = "0.1.0"
+description = "MCP server for local webcam capture and offline microphone transcription (ffmpeg + faster-whisper, no network)"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    # Pinned below 2.0: mcp 2.x renames mcp.server.fastmcp -> mcp.server.mcpserver.
+    # Every other MCP server on this machine runs 1.28.1; staying on one version
+    # across the suite is worth more than being current.
+    "mcp>=1.28.1,<2",
+    "faster-whisper>=1.1.0",
+    "openwakeword>=0.6.0",
+    "onnxruntime>=1.17",
+]
